@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Visualization on Affiliates</title>
+    <link>//localhost:1313/categories/data-visualization/</link>
+    <description>Recent content in Data Visualization on Affiliates</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Apr 2025 08:24:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/data-visualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>We all wait for summer</title>
+      <link>//localhost:1313/post/post-04/</link>
+      <pubDate>Thu, 03 Apr 2025 08:24:00 +0000</pubDate>
+      <guid>//localhost:1313/post/post-04/</guid>
+      <description>&lt;p&gt;This is changed. As I engage in the so-called &amp;ldquo;bull sessions&amp;rdquo; around and about the school, I too often find that most college men have a misconception of the purpose of education. Most of the &amp;ldquo;brethren&amp;rdquo; think that education should equip them with the proper instruments of exploitation so that they can forever trample over the masses. Still others think that education should furnish them with noble ends rather than means to an end.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

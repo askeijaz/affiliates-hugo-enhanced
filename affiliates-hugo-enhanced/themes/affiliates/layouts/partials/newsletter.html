@@ -1,0 +1,14 @@
+{{ define "main" }}
+<!-- Newsletter Signup Form Partial -->
+<div class="newsletter">
+    <h4 class="text-center">NEWSLETTER</h4>
+    <p>Sign up to get our weekly free guide to selling digital downloads</p>
+    <form action="#" method="post" class="newsletter-form" id="newsletter-form">
+        <input type="email" name="email" placeholder="E-mail Address" required>
+        <input type="submit" value="Subscribe" class="btn btn-primary btn-block">
+    </form>
+    <div id="newsletter-success" style="display: none; color: green; margin-top: 10px; text-align: center;">
+        Thank you for subscribing!
+    </div>
+</div>
+{{ end }}

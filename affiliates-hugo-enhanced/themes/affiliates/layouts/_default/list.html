@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            {{ range first 6 (where .Site.RegularPages "Type" "post") }}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <a href="{{ .Permalink }}">
+                        {{ if .Params.image }}
+                        <img class="card-img-top" src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+                        {{ else }}
+                        <img class="card-img-top" src="{{ "images/default-post.jpg" | relURL }}" alt="{{ .Title }}">
+                        {{ end }}
+                    </a>
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h2>
+                        <p class="card-text">{{ .Summary }}</p>
+                        <div class="metafooter">
+                            <div class="wrapfooter">
+                                <span class="author-meta">
+                                    By {{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}, on {{ .Date.Format "Jan 2, 2006" }}
+                                </span>
+                                <div class="social-share">
+                                    <a href="#" data-platform="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" data-platform="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" data-platform="pinterest" title="Share on Pinterest"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        
+        <!-- Pagination -->
+        {{ template "_internal/pagination.html" . }}
+    </div>
+    <div class="col-md-4">
+        <div class="sidebar">
+            <!-- Newsletter -->
+            {{ partial "newsletter.html" . }}
+            
+            <!-- Ad Space -->
+            <div class="ad-space">
+                <h4 class="text-center">YOUR AD HERE</h4>
+                <img src="{{ "images/ad-placeholder.jpg" | relURL }}" alt="Advertisement" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

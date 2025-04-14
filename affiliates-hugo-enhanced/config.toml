@@ -1,0 +1,41 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Affiliates"
+theme = "affiliates"
+
+[params]
+  description = "Let me teach you how to become successful online"
+  author = "Lyam"
+  mainSections = ["post"]
+  logo = "images/logo.png"
+  favicon = "images/favicon.ico"
+  disqusShortname = "affiliates"
+  
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+  [[menu.main]]
+    name = "Get this theme"
+    url = "#"
+    weight = 4
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  
+[pagination]
+  pagerSize = 6
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS", "JSON"]

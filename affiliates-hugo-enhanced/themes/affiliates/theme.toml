@@ -1,0 +1,17 @@
+name = "Affiliates"
+license = "MIT"
+licenselink = "https://github.com/yourusername/affiliates-hugo-theme/blob/master/LICENSE"
+description = "A Hugo port of the Affiliates Jekyll theme"
+homepage = "https://github.com/yourusername/affiliates-hugo-theme"
+tags = ["blog", "responsive", "personal", "light", "bootstrap"]
+features = ["responsive", "blog", "bootstrap"]
+min_version = "0.41.0"
+
+[author]
+  name = "Hugo Port"
+  homepage = "https://github.com/yourusername"
+
+[original]
+  name = "WowThemes"
+  homepage = "https://wowthemesnet.github.io/affiliates-jekyll-theme/"
+  repo = "https://github.com/wowthemesnet/affiliates-jekyll-theme"

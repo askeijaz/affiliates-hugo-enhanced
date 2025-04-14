@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="row">
+    <div class="col-md-8">
+        <h1>{{ .Title }}</h1>
+        
+        {{ .Content }}
+        
+        <!-- Contact Form -->
+        {{ partial "contact-form.html" . }}
+    </div>
+    <div class="col-md-4">
+        <div class="sidebar">
+            <!-- Newsletter -->
+            {{ partial "newsletter.html" . }}
+            
+            <!-- Ad Space -->
+            <div class="ad-space">
+                <h4 class="text-center">YOUR AD HERE</h4>
+                <img src="{{ "images/ad-placeholder.jpg" | relURL }}" alt="Advertisement" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on Affiliates</title>
+    <link>//localhost:1313/tags/tutorial/</link>
+    <description>Recent content in Tutorial on Affiliates</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Apr 2025 08:24:20 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Red Riding Hood</title>
+      <link>//localhost:1313/post/red-riding-hood/</link>
+      <pubDate>Thu, 03 Apr 2025 08:24:20 +0000</pubDate>
+      <guid>//localhost:1313/post/red-riding-hood/</guid>
+      <description>&lt;p&gt;The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet.&lt;/p&gt;&#xA;&lt;p&gt;Produced by the Boston-based publisher Louis Prang, this is the first in their &amp;ldquo;Doll Series&amp;rdquo;, a set of five &amp;ldquo;die-cut&amp;rdquo; books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>We all wait for summer</title>
+      <link>//localhost:1313/post/we-all-wait-for-summer/</link>
+      <pubDate>Thu, 03 Apr 2025 08:24:00 +0000</pubDate>
+      <guid>//localhost:1313/post/we-all-wait-for-summer/</guid>
+      <description>&lt;p&gt;This is changed. As I engage in the so-called &amp;ldquo;bull sessions&amp;rdquo; around and about the school, I too often find that most college men have a misconception of the purpose of education. Most of the &amp;ldquo;brethren&amp;rdquo; think that education should equip them with the proper instruments of exploitation so that they can forever trample over the masses. Still others think that education should furnish them with noble ends rather than means to an end.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,175 @@
+{{ define "main" }}
+<div class="row">
+    <div class="col-lg-8">
+        <h1>{{ .Title }}</h1>
+        
+        {{ if .Params.image }}
+        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="featured-image img-fluid">
+        {{ end }}
+        
+        <div class="post-meta">
+            <span class="post-date"><i class="far fa-calendar-alt me-1"></i>{{ .Date.Format "Jan 2, 2006" }}</span>
+            {{ if .Params.author }}
+            <span class="post-author"><i class="far fa-user me-1"></i>{{ .Params.author }}</span>
+            {{ end }}
+            {{ if .Params.tags }}
+            <div class="post-tags">
+                {{ range .Params.tags }}
+                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+        
+        <!-- Social Sharing -->
+        <div class="social-sharing mt-4 mb-4">
+            <h5>Share this article</h5>
+            <div class="d-flex">
+                <a href="#" data-platform="twitter" class="btn btn-outline-primary me-2"><i class="fab fa-twitter me-1"></i>Twitter</a>
+                <a href="#" data-platform="facebook" class="btn btn-outline-primary me-2"><i class="fab fa-facebook-f me-1"></i>Facebook</a>
+                <a href="#" data-platform="linkedin" class="btn btn-outline-primary me-2"><i class="fab fa-linkedin-in me-1"></i>LinkedIn</a>
+                <a href="#" data-platform="pinterest" class="btn btn-outline-primary"><i class="fab fa-pinterest me-1"></i>Pinterest</a>
+            </div>
+        </div>
+        
+        <!-- Author Bio -->
+        <div class="author-bio bg-light p-4 rounded mb-4">
+            <div class="row">
+                <div class="col-md-2 text-center">
+                    <img src="{{ "images/author.jpg" | relURL }}" alt="Author" class="rounded-circle img-fluid" style="max-width: 100px;">
+                </div>
+                <div class="col-md-10">
+                    <h5>About {{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</h5>
+                    <p>Professional blogger, digital marketer and experienced content creator. Sharing knowledge about online success, monetization strategies, and digital marketing.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Related Posts -->
+        <div class="related-posts mb-4">
+            <h3 class="mb-4">You might also like</h3>
+            <div class="row">
+                {{ $related := .Site.RegularPages.Related . | first 3 }}
+                {{ with $related }}
+                    {{ range . }}
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <a href="{{ .Permalink }}">
+                                {{ if .Params.image }}
+                                <img class="card-img-top" src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+                                {{ else }}
+                                <img class="card-img-top" src="{{ "images/default-post.jpg" | relURL }}" alt="{{ .Title }}">
+                                {{ end }}
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                </h5>
+                                <div class="small text-muted">{{ .Date.Format "Jan 2, 2006" }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                {{ else }}
+                    {{ range first 3 (where (where .Site.RegularPages "Type" "post") "Permalink" "!=" .Permalink) }}
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <a href="{{ .Permalink }}">
+                                {{ if .Params.image }}
+                                <img class="card-img-top" src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+                                {{ else }}
+                                <img class="card-img-top" src="{{ "images/default-post.jpg" | relURL }}" alt="{{ .Title }}">
+                                {{ end }}
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                </h5>
+                                <div class="small text-muted">{{ .Date.Format "Jan 2, 2006" }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+        
+        <!-- Disqus Comments -->
+        <div class="comments">
+            <h3 class="mb-4">Comments</h3>
+            {{ if .Site.Params.disqusShortname }}
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = "{{ .Permalink }}";
+                    this.page.identifier = "{{ .File.UniqueID }}";
+                };
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://{{ .Site.Params.disqusShortname }}.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            {{ end }}
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="sidebar">
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <h4 class="text-center">NEWSLETTER</h4>
+                <p>Sign up to get our weekly free guide to selling digital downloads</p>
+                <form action="#" method="post" class="newsletter-form">
+                    <input type="email" name="email" class="form-control" placeholder="E-mail Address" required>
+                    <button type="submit" class="btn btn-primary w-100 mt-2">Subscribe</button>
+                    <div class="form-status"></div>
+                </form>
+            </div>
+            
+            <!-- Ad Space -->
+            <div class="ad-space">
+                <h4 class="text-center">YOUR AD HERE</h4>
+                <img src="{{ "images/ad-placeholder.jpg" | relURL }}" alt="Advertisement" class="img-fluid">
+            </div>
+            
+            <!-- Categories -->
+            <div class="newsletter">
+                <h4 class="text-center">CATEGORIES</h4>
+                <div class="list-group">
+                    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+                    <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        {{ $name }}
+                        <span class="badge bg-primary rounded-pill">{{ $taxonomy.Count }}</span>
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+            
+            <!-- Tags Cloud -->
+            <div class="newsletter">
+                <h4 class="text-center">TAGS</h4>
+                <div class="tags-cloud">
+                    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                    <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" class="tag">
+                        {{ $name }} ({{ $taxonomy.Count }})
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,34 @@
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="{{ .Site.BaseURL }}">
+                    <img src="{{ "images/logo-footer.png" | relURL }}" alt="powered by WowThemes">
+                </a>
+                <div class="copyright">
+                    <p class="pull-left">
+                        <a href="{{ .Site.BaseURL }}">Home</a>
+                        <a href="{{ "privacy-policy" | relURL }}">Privacy Policy</a>
+                        <a href="{{ "contact" | relURL }}">Contact</a>
+                        <a href="#">Download</a>
+                    </p>
+                    <p>Copyright © {{ .Site.Title }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{{ if .IsHome }}
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+{{ end }}
