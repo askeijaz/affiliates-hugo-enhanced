@@ -1,0 +1,1 @@
+Affiliates Hugo Site - enhanced
